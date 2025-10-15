@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aakash & Anjana Wedding Invitation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            background: linear-gradient(135deg, #faf8f3 0%, #f5ebe0 100%);
+            color: #5a4a42;
+            overflow-x: hidden;
+        }
+
+        /* Floating hearts animation */
+        .heart-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .heart {
+            position: absolute;
+            bottom: -50px;
+            font-size: 24px;
+            animation: float-up 15s linear infinite;
+            will-change: transform, opacity;
+            backface-visibility: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .heart.small {
+            font-size: 16px;
+        }
+
+        .heart.medium {
+            font-size: 28px;
+        }
+
+        .heart.large {
+            font-size: 36px;
+        }
+
+        .heart.pink {
+            color: rgba(255, 182, 193, 0.7);
+        }
+
+        .heart.rose {
+            color: rgba(255, 105, 180, 0.6);
+        }
+
+        .heart.red {
+            color: rgba(220, 20, 60, 0.5);
+        }
+
+        .heart.gold {
+            color: rgba(212, 163, 115, 0.6);
+        }
+
+        @keyframes float-up {
+            0% {
+                transform: translate3d(0, 0, 0) rotate(0deg) scale(0.5);
+                opacity: 0;
+            }
+            5% {
+                opacity: 1;
+            }
+            10% {
+                transform: translate3d(10px, -10vh, 0) rotate(20deg) scale(1);
+            }
+            25% {
+                transform: translate3d(-15px, -25vh, 0) rotate(90deg) scale(1.05);
+            }
+            50% {
+                transform: translate3d(20px, -50vh, 0) rotate(180deg) scale(1);
+            }
+            75% {
+                transform: translate3d(-10px, -75vh, 0) rotate(270deg) scale(0.95);
+            }
+            95% {
+                opacity: 0.8;
+            }
+            100% {
+                transform: translate3d(15px, -100vh, 0) rotate(360deg) scale(0.8);
+                opacity: 0;
+            }
+        }
+
+        /* Decorative elements */
+        .decorative-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .flower {
+            position: absolute;
+            font-size: 40px;
+            opacity: 0.15;
+            animation: gentle-sway 8s infinite ease-in-out;
+            will-change: transform;
+            backface-visibility: hidden;
+        }
+
+        @keyframes gentle-sway {
+            0%, 100% {
+                transform: translate3d(0, 0, 0) rotate(0deg);
+            }
+            50% {
+                transform: translate3d(0, -20px, 0) rotate(10deg);
+            }
+        }
+
+        .sparkle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: radial-gradient(circle, rgba(212, 163, 115, 0.8) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: twinkle 3s infinite ease-in-out;
+            will-change: opacity, transform;
+        }
+
+        @keyframes twinkle {
+            0%, 100% {
+                opacity: 0;
+                transform: scale3d(0.5, 0.5, 1);
+            }
+            50% {
+                opacity: 1;
+                transform: scale3d(1.5, 1.5, 1);
+            }
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+            position: relative;
+            z-index: 2;
+            background: linear-gradient(180deg, rgba(255,255,255,0.9) 0%, rgba(250,248,243,0.95) 100%);
+        }
+
+        .bible-verse {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-style: italic;
+            color: #c9a690;
+            margin-bottom: 60px;
+            opacity: 0;
+            animation: fadeIn 2s ease-in forwards;
+            max-width: 800px;
+            line-height: 1.6;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        .main-heading {
+            font-family: 'Great Vibes', cursive;
+            font-size: 5rem;
+            color: #d4a373;
+            margin-bottom: 30px;
+            opacity: 0;
+            animation: fadeIn 2s ease-in 0.5s forwards;
+        }
+
+        .invitation-text {
+            font-size: 1.2rem;
+            color: #6b5b54;
+            max-width: 700px;
+            line-height: 1.8;
+            margin-bottom: 40px;
+            opacity: 0;
+            animation: fadeIn 2s ease-in 1s forwards;
+        }
+
+        /* Couple Section */
+        .couple-section {
+            padding: 80px 20px;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            background: rgba(255, 255, 255, 0.6);
+        }
+
+        .couple-names {
+            opacity: 0;
+            animation: fadeUp 1.5s ease-out 0.3s forwards;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .groom-name, .bride-name {
+            font-family: 'Great Vibes', cursive;
+            font-size: 3.5rem;
+            color: #b8926b;
+            margin: 20px 0;
+        }
+
+        .groom-details, .bride-details {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            color: #7a6a63;
+            margin-bottom: 10px;
+        }
+
+        .weds {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: #d4a373;
+            margin: 40px 0;
+            position: relative;
+        }
+
+        .weds::before,
+        .weds::after {
+            content: '❤';
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #ffc0cb;
+            font-size: 1.5rem;
+            animation: pulse 2s infinite;
+        }
+
+        .weds::before {
+            left: -60px;
+        }
+
+        .weds::after {
+            right: -60px;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: translateY(-50%) scale(1);
+            }
+            50% {
+                transform: translateY(-50%) scale(1.2);
+            }
+        }
+
+        .bride-parents {
+            font-size: 0.95rem;
+            color: #8a7a73;
+            font-style: italic;
+            margin-top: 10px;
+        }
+
+        /* Parents Section */
+        .parents-section {
+            padding: 60px 20px;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .parents-heading {
+            font-family: 'Playfair Display', serif;
+            font-size: 1rem;
+            color: #8a7a73;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .parents-names {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            color: #6b5b54;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .kids {
+            font-size: 1rem;
+            color: #8a7a73;
+            font-style: italic;
+        }
+
+        /* Event Details Section */
+        .event-section {
+            padding: 80px 20px;
+            position: relative;
+            z-index: 2;
+            background: rgba(255, 255, 255, 0.8);
+        }
+
+        .event-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .event-card {
+            background: white;
+            border-radius: 20px;
+            padding: 50px 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 40px rgba(180, 146, 107, 0.15);
+            opacity: 0;
+            animation: fadeUp 1.5s ease-out forwards;
+        }
+
+        .event-card:nth-child(2) {
+            animation-delay: 0.3s;
+        }
+
+        .event-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            color: #b8926b;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #f5d6c6;
+            padding-bottom: 15px;
+        }
+
+        .event-details {
+            font-size: 1.15rem;
+            line-height: 2;
+            color: #6b5b54;
+        }
+
+        .event-details strong {
+            color: #5a4a42;
+            font-weight: 600;
+        }
+
+        .date-time {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: #d4a373;
+            margin: 20px 0;
+            font-weight: 600;
+        }
+
+        .venue {
+            font-size: 1.2rem;
+            color: #7a6a63;
+            margin: 15px 0;
+        }
+
+        .officiants {
+            font-size: 1rem;
+            color: #8a7a73;
+            margin-top: 20px;
+            font-style: italic;
+            line-height: 1.6;
+        }
+
+        /* Photo Gallery Section */
+        .gallery-section {
+            padding: 80px 20px;
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+
+        .gallery-heading {
+            font-family: 'Great Vibes', cursive;
+            font-size: 4rem;
+            color: #d4a373;
+            margin-bottom: 50px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .gallery-item {
+            height: 350px;
+            background: linear-gradient(135deg, #f5ebe0 0%, #faf8f3 100%);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Playfair Display', serif;
+            color: #c9a690;
+            font-size: 1.2rem;
+            box-shadow: 0 5px 20px rgba(180, 146, 107, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(180, 146, 107, 0.2);
+        }
+
+        /* Video Section */
+        .video-section {
+            padding: 80px 20px;
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.6);
+        }
+
+        .video-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 10px 40px rgba(180, 146, 107, 0.15);
+            overflow: hidden;
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 15px;
+            background: #000;
+        }
+
+        .video-wrapper video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 15px;
+        }
+
+        /* Footer */
+        .footer {
+            padding: 60px 20px;
+            text-align: center;
+            background: linear-gradient(180deg, rgba(255,255,255,0.9) 0%, rgba(250,248,243,0.95) 100%);
+            position: relative;
+            z-index: 2;
+        }
+
+        .footer-message {
+            font-family: 'Great Vibes', cursive;
+            font-size: 3rem;
+            color: #d4a373;
+            margin-bottom: 20px;
+        }
+
+        .hashtag {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: #b8926b;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .main-heading {
+                font-size: 3.5rem;
+            }
+
+            .bible-verse {
+                font-size: 1.3rem;
+                padding: 0 10px;
+            }
+
+            .invitation-text {
+                font-size: 1rem;
+                padding: 0 10px;
+            }
+
+            .groom-name, .bride-name {
+                font-size: 2.5rem;
+            }
+
+            .groom-details, .bride-details {
+                font-size: 0.95rem;
+            }
+
+            .weds::before,
+            .weds::after {
+                display: none;
+            }
+
+            .event-card {
+                padding: 35px 25px;
+            }
+
+            .event-title {
+                font-size: 1.8rem;
+            }
+
+            .event-details {
+                font-size: 1rem;
+            }
+
+            .gallery-heading {
+                font-size: 3rem;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 20px;
+            }
+
+            .gallery-item {
+                height: 280px;
+            }
+
+            .video-container {
+                padding: 15px;
+            }
+
+            .footer-message {
+                font-size: 2.5rem;
+            }
+
+            .hashtag {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .main-heading {
+                font-size: 2.8rem;
+            }
+
+            .bible-verse {
+                font-size: 1.1rem;
+                margin-bottom: 40px;
+            }
+
+            .groom-name, .bride-name {
+                font-size: 2rem;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .gallery-item {
+                height: 250px;
+            }
+
+            .video-container {
+                padding: 10px;
+            }
+
+            .event-card {
+                padding: 25px 20px;
+            }
+
+            .date-time {
+                font-size: 1.1rem;
+            }
+
+            .venue {
+                font-size: 1rem;
+            }
+        }
+
+        /* Performance optimizations */
+        img, video {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Lazy loading support */
+        img[loading="lazy"] {
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        img[loading="lazy"].loaded {
+            opacity: 1;
+        }
+
+        /* Reduce motion for users who prefer it */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating Hearts Background -->
+    <div class="heart-container" id="hearts"></div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <p class="bible-verse">"The Lord has done great things for us"<br>(Psalm 126:3)</p>
+        <h1 class="main-heading">Wedding Invitation</h1>
+        <p class="invitation-text">
+            Cordially solicit your esteemed presence and blessings with family and friends on the happy occasion of the wedding of our beloved son.
+        </p>
+    </section>
+
+    <!-- Couple Section -->
+    <section class="couple-section">
+        <div class="couple-names">
+            <div>
+                <h2 class="groom-name">Dr. Aakash Britto .A</h2>
+                <p class="groom-details">M.D.S., OMFS</p>
+                <p class="groom-details">AIIMS Jodhpur</p>
+            </div>
+            <div class="weds">weds</div>
+            <div>
+                <h2 class="bride-name">Dr. Anjana .R</h2>
+                <p class="bride-details">M.D.S., Orthodontics</p>
+                <p class="bride-details">AIIMS Jodhpur</p>
+                <p class="bride-parents">(D/o. Mrs. Prasanna Kumari .C.K & Mr. Rajagopalan)</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Parents Section -->
+    <section class="parents-section">
+        <p class="parents-heading">With best compliments from</p>
+        <p class="parents-names">Mrs. Anitha Cellus .B & Mr. Benjamine Marshal .M</p>
+        <p class="kids">Kids: Alice Marlene .B</p>
+    </section>
+
+    <!-- Event Details Section -->
+    <section class="event-section">
+        <div class="event-container">
+            <!-- Wedding Ceremony -->
+            <div class="event-card">
+                <h3 class="event-title">Wedding Ceremony</h3>
+                <div class="event-details">
+                    <p class="date-time">On Sunday, 23rd November 2025, from 9.15 a.m onwards</p>
+                    <p class="venue">at <strong>St Antony's Church, Puzhal, Chennai - 66</strong></p>
+                    <p class="officiants">
+                        by Rev. Fr. Y.F.Bosco (Parish Priest, Puzhal) & Rev. Fr. David Christopher JH (Assistant Parish Priest, Puzhal)
+                    </p>
+                </div>
+            </div>
+
+            <!-- Reception -->
+            <div class="event-card">
+                <h3 class="event-title">Reception</h3>
+                <div class="event-details">
+                    <p class="date-time">Followed by Reception at 12.00 p.m</p>
+                    <p class="venue">at <strong>Parkavakula Udayar Thirumana Maligai A/C</strong></p>
+                    <p class="venue">Thiruvallur Road, Redhills, Chennai - 52</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section class="video-section">
+        <h2 class="gallery-heading">Our Special Moments</h2>
+        <div class="video-container">
+            <div class="video-wrapper">
+                <video controls preload="metadata" playsinline>
+                    <source src="WhatsApp Video 2025-10-04 at 9.15.12 PM.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photo Gallery Section -->
+    <section class="gallery-section" style="padding-top: 40px;">
+        <h2 class="gallery-heading">Our Memories</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="7.jpg" alt="Wedding Photo 1" loading="lazy">
+            </div>
+            <div class="gallery-item">
+                <img src="WhatsApp Image 2025-10-15 at 4.10.49 PM.jpeg" alt="Wedding Photo 2" loading="lazy">
+            </div>
+            <div class="gallery-item">
+                <img src="WhatsApp Image 2025-10-15 at 4.15.30 PM.jpeg" alt="Wedding Photo 3" loading="lazy">
+            </div>
+            <div class="gallery-item">
+                <img src="WhatsApp Image 2025-10-15 at 4.19.08 PM (1).jpeg" alt="Wedding Photo 4" loading="lazy">
+            </div>
+            <div class="gallery-item">
+                <img src="WhatsApp Image 2025-10-15 at 4.19.09 PM.jpeg" alt="Wedding Photo 5" loading="lazy">
+            </div>
+            <div class="gallery-item">
+                <img src="WhatsApp Image 2025-10-15 at 4.19.10 PM.jpeg" alt="Wedding Photo 6" loading="lazy">
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p class="footer-message">With Love ❤️ Aakash & Anjana</p>
+        <p class="hashtag">#AakashWedsAnjana</p>
+    </footer>
+
+    <script>
+        // Generate floating hearts with variety
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            
+            // Random heart variations
+            const sizes = ['small', 'medium', 'large', ''];
+            const colors = ['pink', 'rose', 'red', 'gold'];
+            const heartSymbols = ['❤', '💕', '💖', '💗', '💝', '💞'];
+            
+            heart.classList.add(sizes[Math.floor(Math.random() * sizes.length)]);
+            heart.classList.add(colors[Math.floor(Math.random() * colors.length)]);
+            heart.innerHTML = heartSymbols[Math.floor(Math.random() * heartSymbols.length)];
+            heart.style.left = Math.random() * 100 + '%';
+            
+            // Smoother duration range
+            const duration = Math.random() * 5 + 12;
+            heart.style.animationDuration = duration + 's';
+            heart.style.animationDelay = Math.random() * 3 + 's';
+            
+            document.getElementById('hearts').appendChild(heart);
+
+            // Remove after animation completes
+            setTimeout(() => {
+                heart.remove();
+            }, (duration + 3) * 1000);
+        }
+
+        // Create hearts at optimal frequency for smoothness
+        setInterval(createHeart, 400);
+
+        // Initial burst of hearts with staggered timing
+        for (let i = 0; i < 35; i++) {
+            setTimeout(createHeart, i * 150);
+        }
+
+        // Add decorative flowers
+        function addFlowers() {
+            const decorativeBg = document.createElement('div');
+            decorativeBg.classList.add('decorative-bg');
+            document.body.appendChild(decorativeBg);
+
+            const flowers = ['🌸', '🌺', '🌼', '🌻', '🌷', '🏵️'];
+            const positions = [
+                { top: '10%', left: '5%' },
+                { top: '20%', right: '8%' },
+                { top: '40%', left: '3%' },
+                { top: '60%', right: '5%' },
+                { top: '80%', left: '7%' },
+                { bottom: '15%', right: '10%' }
+            ];
+
+            positions.forEach((pos, index) => {
+                const flower = document.createElement('div');
+                flower.classList.add('flower');
+                flower.innerHTML = flowers[index % flowers.length];
+                Object.assign(flower.style, pos);
+                flower.style.animationDelay = (index * 0.5) + 's';
+                decorativeBg.appendChild(flower);
+            });
+
+            // Add sparkles
+            for (let i = 0; i < 30; i++) {
+                const sparkle = document.createElement('div');
+                sparkle.classList.add('sparkle');
+                sparkle.style.top = Math.random() * 100 + '%';
+                sparkle.style.left = Math.random() * 100 + '%';
+                sparkle.style.animationDelay = Math.random() * 3 + 's';
+                decorativeBg.appendChild(sparkle);
+            }
+        }
+
+        // Initialize decorations
+        addFlowers();
+
+        // Smooth scroll reveal animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.event-card, .gallery-item').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Lazy loading images
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.classList.add('loaded');
+                    observer.unobserve(img);
+                }
+            });
+        });
+
+        document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+            imageObserver.observe(img);
+        });
+
+        // Optimize video loading
+        const video = document.querySelector('video');
+        if (video) {
+            // Pause video when not in viewport to save bandwidth
+            const videoObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting && !video.paused) {
+                        video.pause();
+                    }
+                });
+            }, { threshold: 0.25 });
+            
+            videoObserver.observe(video);
+        }
+    </script>
+</body>
+</html>
