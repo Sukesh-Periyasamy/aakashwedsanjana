@@ -1,12 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-NHHS9W42YQ"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-NHHS9W42YQ');
+        </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aakash & Anjana Wedding Invitation</title>
+    <title>💍 Dr. Aakash & Dr. Anjana Wedding Celebration</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600;700;800&family=Lato:wght@300;400;600&family=Cormorant+Garamond:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💍</text></svg>">
     <style>
@@ -22,7 +32,7 @@
 
         body {
             font-family: 'Lato', sans-serif;
-            background: linear-gradient(135deg, #faf8f3 0%, #f5ebe0 100%);
+            background: linear-gradient(135deg, #fff5f0 0%, #ffe8e0 25%, #ffd4c8 50%, #ffe8e0 75%, #fff5f0 100%);
             color: #5a4a42;
             overflow-x: hidden;
         }
@@ -193,21 +203,43 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 40px 20px;
+            padding: 60px 20px;
             position: relative;
             z-index: 2;
-            background: linear-gradient(180deg, rgba(255,255,255,0.9) 0%, rgba(250,248,243,0.95) 100%);
+            background: linear-gradient(180deg, rgba(255,255,255,0.95) 0%, rgba(255,245,240,0.9) 100%);
+        }
+
+        .main-heading {
+            font-family: 'Great Vibes', cursive;
+            font-size: 4.5rem;
+            color: #d4a373;
+            margin-bottom: 20px;
+            opacity: 0;
+            animation: fadeIn 2s ease-in forwards;
+            text-shadow: 0 0 20px rgba(212, 163, 115, 0.3);
+            line-height: 1.3;
+        }
+
+        .tagline {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            color: #c9a690;
+            margin-bottom: 30px;
+            opacity: 0;
+            animation: fadeIn 2s ease-in 0.3s forwards;
+            font-weight: 600;
+            letter-spacing: 1px;
         }
 
         .bible-verse {
             font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
+            font-size: 1.4rem;
             font-style: italic;
-            color: #c9a690;
-            margin-bottom: 60px;
+            color: #8a7a73;
+            margin-bottom: 50px;
             opacity: 0;
-            animation: fadeIn 2s ease-in forwards;
-            max-width: 800px;
+            animation: fadeIn 2s ease-in 0.6s forwards;
+            max-width: 700px;
             line-height: 1.6;
         }
 
@@ -215,24 +247,34 @@
             to { opacity: 1; }
         }
 
-        .main-heading {
-            font-family: 'Great Vibes', cursive;
-            font-size: 5rem;
-            color: #d4a373;
+        .invitation-text {
+            font-size: 1.25rem;
+            color: #6b5b54;
+            max-width: 900px;
+            line-height: 2;
             margin-bottom: 30px;
             opacity: 0;
-            animation: fadeIn 2s ease-in 0.5s forwards;
-            text-shadow: 0 0 20px rgba(212, 163, 115, 0.3);
+            animation: fadeIn 2s ease-in 0.9s forwards;
         }
 
-        .invitation-text {
-            font-size: 1.2rem;
-            color: #6b5b54;
-            max-width: 700px;
-            line-height: 1.8;
-            margin-bottom: 40px;
+        .couple-names-hero {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            color: #b8926b;
+            font-weight: 700;
+            margin: 20px 0;
             opacity: 0;
-            animation: fadeIn 2s ease-in 1s forwards;
+            animation: fadeIn 2s ease-in 1.2s forwards;
+        }
+
+        .couple-tagline {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            color: #c9a690;
+            font-style: italic;
+            margin-top: 30px;
+            opacity: 0;
+            animation: fadeIn 2s ease-in 1.5s forwards;
         }
 
         /* Countdown Timer */
@@ -291,68 +333,78 @@
 
         /* Couple Section */
         .couple-section {
-            padding: 80px 20px;
+            padding: 100px 20px;
             text-align: center;
             position: relative;
             z-index: 2;
-            background: rgba(255, 255, 255, 0.6);
+            background: linear-gradient(180deg, rgba(255,255,255,0.8) 0%, rgba(255,245,240,0.9) 100%);
         }
 
-        .couple-names {
-            opacity: 0;
-            animation: fadeUp 1.5s ease-out 0.3s forwards;
-        }
-
-        @keyframes fadeUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .groom-name, .bride-name {
+        .section-title {
             font-family: 'Great Vibes', cursive;
-            font-size: 3.5rem;
-            color: #b8926b;
-            margin: 20px 0;
+            font-size: 4rem;
+            color: #d4a373;
+            margin-bottom: 50px;
+            text-shadow: 0 0 15px rgba(212, 163, 115, 0.2);
         }
 
-        .groom-details, .bride-details {
+        .couple-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+            max-width: 1000px;
+            margin: 0 auto;
+            align-items: start;
+        }
+
+        .couple-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px 30px;
+            box-shadow: 0 10px 40px rgba(180, 146, 107, 0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .couple-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 50px rgba(180, 146, 107, 0.25);
+        }
+
+        .couple-name {
+            font-family: 'Great Vibes', cursive;
+            font-size: 3rem;
+            color: #b8926b;
+            margin-bottom: 20px;
+        }
+
+        .couple-details {
             font-family: 'Playfair Display', serif;
             font-size: 1.1rem;
             color: #7a6a63;
             margin-bottom: 10px;
+            line-height: 1.8;
         }
 
-        .weds {
-            font-family: 'Playfair Display', serif;
-            font-size: 2rem;
-            color: #d4a373;
-            margin: 40px 0;
-            position: relative;
+        .couple-parents {
+            font-size: 1rem;
+            color: #8a7a73;
+            font-style: italic;
+            margin-top: 20px;
+            line-height: 1.8;
+            padding-top: 20px;
+            border-top: 1px solid #f5d6c6;
         }
 
-        .weds::before, .weds::after {
-            content: '❤';
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
+        .heart-divider {
+            font-size: 2.5rem;
             color: #ffc0cb;
-            font-size: 1.5rem;
+            margin: 30px 0;
             animation: pulse 2s infinite;
         }
 
-        .weds::before { left: -60px; }
-        .weds::after { right: -60px; }
-
         @keyframes pulse {
-            0%, 100% { transform: translateY(-50%) scale(1); }
-            50% { transform: translateY(-50%) scale(1.2); }
-        }
-
-        .bride-parents {
-            font-size: 0.95rem;
-            color: #8a7a73;
-            font-style: italic;
-            margin-top: 10px;
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
         }
 
         /* Quote Section */
@@ -481,62 +533,123 @@
             line-height: 1.6;
         }
 
-        /* Parents Section */
+        /* Blessings Section */
         .parents-section {
-            padding: 60px 20px;
+            padding: 80px 20px;
             text-align: center;
             position: relative;
             z-index: 2;
+            background: rgba(255, 255, 255, 0.9);
         }
 
         .parents-heading {
+            font-family: 'Great Vibes', cursive;
+            font-size: 3.5rem;
+            color: #d4a373;
+            margin-bottom: 40px;
+        }
+
+        .blessings-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .blessing-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px 25px;
+            box-shadow: 0 8px 30px rgba(180, 146, 107, 0.12);
+        }
+
+        .blessing-title {
             font-family: 'Playfair Display', serif;
-            font-size: 1rem;
-            color: #8a7a73;
+            font-size: 1.1rem;
+            color: #b8926b;
             margin-bottom: 15px;
             text-transform: uppercase;
             letter-spacing: 2px;
+            font-weight: 600;
         }
 
         .parents-names {
             font-family: 'Playfair Display', serif;
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             color: #6b5b54;
             font-weight: 600;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
+            line-height: 1.6;
         }
 
         .kids {
             font-size: 1rem;
             color: #8a7a73;
             font-style: italic;
+            margin-top: 10px;
         }
 
         /* Event Details Section */
         .event-section {
-            padding: 80px 20px;
+            padding: 100px 20px;
             position: relative;
             z-index: 2;
-            background: rgba(255, 255, 255, 0.8);
+            background: linear-gradient(180deg, rgba(255,245,240,0.9) 0%, rgba(255,255,255,0.95) 100%);
         }
 
         .event-container {
-            max-width: 900px;
+            max-width: 1400px;
             margin: 0 auto;
+        }
+
+        .events-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            margin-bottom: 50px;
+            align-items: start;
         }
 
         .event-card {
             background: white;
-            border-radius: 20px;
+            border-radius: 30px;
             padding: 50px 40px;
-            margin-bottom: 40px;
-            box-shadow: 0 10px 40px rgba(180, 146, 107, 0.15);
-            opacity: 0;
-            animation: fadeUp 1.5s ease-out forwards;
+            box-shadow: 0 20px 60px rgba(180, 146, 107, 0.15);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 2px solid rgba(212, 163, 115, 0.1);
+            position: relative;
+            overflow: hidden;
         }
 
-        .event-card:nth-child(2) {
-            animation-delay: 0.3s;
+        .event-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, #d4a373, #b8926b, #d4a373);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .event-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .event-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 30px 80px rgba(180, 146, 107, 0.25);
+            border-color: rgba(212, 163, 115, 0.3);
+        }
+
+        .event-card.chennai {
+            background: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(255,245,240,0.6) 100%);
+        }
+
+        .event-card.kerala {
+            background: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(240,255,245,0.6) 100%);
         }
 
         .event-title {
@@ -544,8 +657,98 @@
             font-size: 2.2rem;
             color: #b8926b;
             margin-bottom: 30px;
-            border-bottom: 2px solid #f5d6c6;
-            padding-bottom: 15px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #f5d6c6;
+            font-weight: 700;
+            position: relative;
+        }
+
+        .event-title::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, #d4a373, #b8926b);
+        }
+
+        .event-location-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #d4a373, #b8926b);
+            color: white;
+            padding: 10px 24px;
+            border-radius: 25px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 25px;
+            letter-spacing: 1.5px;
+            box-shadow: 0 5px 15px rgba(180, 146, 107, 0.3);
+        }
+
+        .event-details {
+            font-size: 1.15rem;
+            line-height: 2.2;
+            color: #6b5b54;
+        }
+
+        .date-time {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.35rem;
+            color: #d4a373;
+            margin: 15px 0;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .venue {
+            font-size: 1.25rem;
+            color: #7a6a63;
+            margin: 12px 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .officiants {
+            font-size: 1.05rem;
+            color: #8a7a73;
+            margin-top: 20px;
+            font-style: italic;
+            line-height: 1.8;
+            padding: 15px;
+            background: rgba(212, 163, 115, 0.05);
+            border-radius: 10px;
+            border-left: 4px solid #d4a373;
+        }
+
+        .reception-divider {
+            margin: 35px 0 30px;
+            padding-top: 35px;
+            border-top: 2px dashed rgba(212, 163, 115, 0.3);
+            position: relative;
+        }
+
+        .reception-divider::before {
+            content: '💐';
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: white;
+            padding: 0 15px;
+            font-size: 1.5rem;
+        }
+
+        .reception-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: #b8926b;
+            margin-bottom: 20px;
+            font-weight: 600;
+            text-align: center;
         }
 
         .event-details {
@@ -744,39 +947,109 @@
 
         /* Footer */
         .footer {
-            padding: 60px 20px;
+            padding: 80px 20px 40px;
             text-align: center;
-            background: linear-gradient(180deg, rgba(255,255,255,0.9) 0%, rgba(250,248,243,0.95) 100%);
+            background: linear-gradient(180deg, rgba(255,255,255,0.95) 0%, rgba(255,245,240,0.9) 100%);
             position: relative;
             z-index: 2;
         }
 
         .footer-message {
             font-family: 'Great Vibes', cursive;
-            font-size: 3rem;
+            font-size: 3.5rem;
             color: #d4a373;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
 
         .hashtag {
             font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             color: #b8926b;
             font-weight: 600;
             letter-spacing: 1px;
+            margin-bottom: 30px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+
+        .social-share-btn {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-family: 'Lato', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+        }
+
+        .social-share-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .whatsapp-btn {
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: white;
+        }
+
+        .whatsapp-btn:hover {
+            background: linear-gradient(135deg, #128C7E, #075E54);
+        }
+
+        .instagram-btn {
+            background: linear-gradient(135deg, #E1306C, #C13584, #833AB4);
+            color: white;
+        }
+
+        .instagram-btn:hover {
+            background: linear-gradient(135deg, #C13584, #833AB4, #5851DB);
+        }
+
+        .share-icon {
+            font-size: 24px;
+        }
+
+        .footer-credit {
+            font-size: 0.95rem;
+            color: #8a7a73;
+            margin-top: 30px;
+            font-style: italic;
         }
 
         /* Responsive Design */
+        @media (max-width: 1200px) {
+            .events-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+
         @media (max-width: 768px) {
-            .main-heading { font-size: 3.5rem; }
-            .bible-verse { font-size: 1.3rem; padding: 0 10px; }
-            .invitation-text { font-size: 1rem; padding: 0 10px; }
-            .groom-name, .bride-name { font-size: 2.5rem; }
-            .groom-details, .bride-details { font-size: 0.95rem; }
-            .weds::before, .weds::after { display: none; }
+            .main-heading { font-size: 3rem; }
+            .tagline { font-size: 1.3rem; }
+            .bible-verse { font-size: 1.1rem; padding: 0 10px; }
+            .invitation-text { font-size: 1.05rem; padding: 0 10px; }
+            .couple-names-hero { font-size: 1.3rem; }
+            .couple-grid { grid-template-columns: 1fr; gap: 30px; }
+            .couple-name { font-size: 2.5rem; }
+            .events-grid { grid-template-columns: 1fr; gap: 30px; }
             .event-card { padding: 35px 25px; }
-            .event-title { font-size: 1.8rem; }
+            .event-title { font-size: 1.6rem; }
             .event-details { font-size: 1rem; }
+            .date-time { font-size: 1.1rem; }
+            .venue { font-size: 1rem; }
+            .blessings-grid { grid-template-columns: 1fr; }
             .gallery-heading { font-size: 3rem; }
             .video-container { padding: 15px; }
             .footer-message { font-size: 2.5rem; }
@@ -851,12 +1124,23 @@
     <div class="heart-container" id="hearts"></div>
 
     <!-- Hero Section -->
-    <section class="hero">
-        <p class="bible-verse">"The Lord has done great things for us"<br>(Psalm 126:3)</p>
-        <h1 class="main-heading">Wedding Invitation</h1>
+    <section class="hero" data-aos="fade-up">
+        <h1 class="main-heading">💍 The Wedding Celebration of<br>Dr. Aakash & Dr. Anjana 💍</h1>
+        <p class="tagline">Tamil Nadu ❤️ Kerala — Two States, One Love</p>
+        <p class="bible-verse">"The Lord has done great things for us" (Psalm 126:3)</p>
         <p class="invitation-text">
-            Cordially solicit your esteemed presence and blessings with family and friends on the happy occasion of the wedding of our beloved son.
+            With the blessings of <strong>Late Smt. Madhavikutty Amma</strong>, <strong>Late Shri. Ramanunni Nair</strong>, 
+            <strong>Smt. Prasanna Kumari C K</strong>, <strong>Smt. Mariya Irudaya Rani</strong>, and <strong>Shri. Arul Doss</strong>,<br>
+            we joyfully invite you to celebrate the union of
         </p>
+        <p class="couple-names-hero">
+            Dr. Aakash Britto A<br>
+            <span style="font-size: 1.2rem; color: #8a7a73;">M.D.S., OMFS (AIIMS Jodhpur)</span><br>
+            <span style="font-size: 1.8rem; color: #d4a373;">&</span><br>
+            Dr. Anjana R<br>
+            <span style="font-size: 1.2rem; color: #8a7a73;">M.D.S., Orthodontics (AIIMS Jodhpur)</span>
+        </p>
+        <p class="couple-tagline">"Two hearts, one soul — bound by faith, love, and destiny."</p>
     </section>
 
     <!-- Countdown Timer -->
@@ -884,26 +1168,38 @@
 
     <!-- Couple Section -->
     <section class="couple-section">
-        <div class="couple-names">
-            <div>
-                <h2 class="groom-name">Dr. Aakash Britto .A</h2>
-                <p class="groom-details">M.D.S., OMFS</p>
-                <p class="groom-details">AIIMS Jodhpur</p>
+        <h2 class="section-title" data-aos="fade-up">Meet The Couple</h2>
+        <div class="couple-grid">
+            <div class="couple-card" data-aos="fade-right" data-aos-delay="200">
+                <h3 class="couple-name">Dr. Aakash Britto A</h3>
+                <p class="couple-details">M.D.S., OMFS</p>
+                <p class="couple-details">AIIMS Jodhpur</p>
+                <p class="couple-parents">
+                    Son of<br>
+                    <strong>Smt. Mariya Irudaya Rani</strong><br>
+                    & <strong>Shri. Arul Doss</strong>
+                </p>
             </div>
-            <div class="weds">weds</div>
-            <div>
-                <h2 class="bride-name">Dr. Anjana .R</h2>
-                <p class="bride-details">M.D.S., Orthodontics</p>
-                <p class="bride-details">AIIMS Jodhpur</p>
-                <p class="bride-parents">(D/o. Mrs. Prasanna Kumari .C.K & Mr. Rajagopalan)</p>
+            <div class="couple-card" data-aos="fade-left" data-aos-delay="400">
+                <h3 class="couple-name">Dr. Anjana R</h3>
+                <p class="couple-details">M.D.S., Orthodontics</p>
+                <p class="couple-details">AIIMS Jodhpur</p>
+                <p class="couple-parents">
+                    Daughter of<br>
+                    <strong>Smt. Prasanna Kumari C K</strong><br>
+                    & <strong>Late Shri. Ramanunni Nair</strong><br>
+                    In loving memory of<br>
+                    <strong>Late Smt. Madhavikutty Amma</strong>
+                </p>
             </div>
         </div>
+        <div class="heart-divider">❤️</div>
     </section>
 
     <!-- Quote Section -->
     <section class="quote-section">
         <div class="quote-card">
-            <p class="quote-text">"Two hearts, one soul, bound by love forever."</p>
+            <p class="quote-text">"Two hearts, one soul, bound by love forever — a beautiful union of two families, two states, and endless love."</p>
         </div>
     </section>
 
@@ -946,44 +1242,88 @@
         </div>
     </section>
 
-    <!-- Parents Section -->
+    <!-- Blessings Section -->
     <section class="parents-section">
-        <p class="parents-heading">With best compliments from</p>
-        <p class="parents-names">Mrs. Anitha Cellus .B & Mr. Benjamine Marshal .M</p>
-        <p class="kids">Kids: Alice Marlene .B</p>
+        <h2 class="parents-heading" data-aos="fade-up">With Blessings & Best Compliments</h2>
+        <div class="blessings-grid">
+            <div class="blessing-card" data-aos="flip-left" data-aos-delay="200">
+                <p class="blessing-title">Bride's Family</p>
+                <p class="parents-names">Smt. Prasanna Kumari C K</p>
+                <p class="kids">In loving memory of<br>Late Smt. Madhavikutty Amma<br>& Late Shri. Ramanunni Nair</p>
+            </div>
+            <div class="blessing-card" data-aos="flip-left" data-aos-delay="400">
+                <p class="blessing-title">Groom's Family</p>
+                <p class="parents-names">Smt. A. Mariya Irudaya Rani<br>& Shri. S. Arul Doss</p>
+            </div>
+            <div class="blessing-card" data-aos="flip-left" data-aos-delay="600">
+                <p class="blessing-title">With Best Compliments</p>
+                <p class="parents-names">Smt. Anitha Cellus B<br>& Shri. Benjamine Marshal M</p>
+                <p class="kids">Kids: Alice Marlene B<br>and Abijith</p>
+            </div>
+        </div>
     </section>
 
     <!-- Event Details Section -->
     <section class="event-section">
+        <h2 class="section-title" data-aos="fade-up">Ceremony Details</h2>
         <div class="event-container">
-            <!-- Wedding Ceremony -->
-            <div class="event-card">
-                <h3 class="event-title">Wedding Ceremony</h3>
-                <div class="event-details">
-                    <p class="date-time">On Sunday, 23rd November 2025, from 9.15 a.m onwards</p>
-                    <p class="venue">at <strong>St Antony's Church, Puzhal, Chennai - 66</strong></p>
-                    <p class="officiants">
-                        by Rev. Fr. Y.F.Bosco (Parish Priest, Puzhal) & Rev. Fr. David Christopher JH (Assistant Parish Priest, Puzhal)
-                    </p>
+            <div class="events-grid">
+                <!-- Chennai Events -->
+                <div class="event-card chennai" data-aos="zoom-in" data-aos-delay="200">
+                    <span class="event-location-badge">🏛️ CHENNAI, TAMIL NADU</span>
+                    <h3 class="event-title">Wedding Ceremony</h3>
+                    <div class="event-details">
+                        <p class="date-time">📅 Sunday, 23rd November 2025</p>
+                        <p class="date-time">⏰ 9:15 AM onwards</p>
+                        <p class="venue">📍 <strong>St Antony's Church</strong></p>
+                        <p class="venue">Puzhal, Chennai - 66</p>
+                        <p class="officiants">
+                            🕊️ Officiated by Rev. Fr. Y.F.Bosco (Parish Priest, Puzhal) & Rev. Fr. David Christopher JH (Assistant Parish Priest, Puzhal)
+                        </p>
+                    </div>
+                    <div class="map-container">
+                        <iframe src="https://maps.google.com/maps?width=100%25&height=300&hl=en&q=St%20Antony's%20Church,%20Puzhal,%20Chennai&t=&z=14&ie=UTF8&iwloc=B&output=embed" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                    <a href="https://www.google.com/maps/search/St+Antony's+Church+Puzhal+Chennai" target="_blank" class="directions-btn">Get Directions 📍</a>
+                    
+                    <div class="reception-divider">
+                        <h4 class="reception-title">Reception</h4>
+                        <p class="date-time">🎉 12:00 PM onwards</p>
+                        <p class="venue">📍 <strong>Parkavakula Udayar Thirumana Maligai A/C</strong></p>
+                        <p class="venue">Thiruvallur Road, Redhills, Chennai - 52</p>
+                        <div class="map-container" style="margin-top: 20px;">
+                            <iframe src="https://maps.google.com/maps?width=100%25&height=300&hl=en&q=Parkavakula%20Udayar%20Thirumana%20Maligai,%20Redhills,%20Chennai&t=&z=14&ie=UTF8&iwloc=B&output=embed" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                        <a href="https://www.google.com/maps/search/Parkavakula+Udayar+Thirumana+Maligai+Redhills+Chennai" target="_blank" class="directions-btn">Get Directions 📍</a>
+                    </div>
                 </div>
-                <div class="map-container">
-                    <iframe src="https://maps.google.com/maps?width=100%25&height=300&hl=en&q=St%20Antony's%20Church,%20Puzhal,%20Chennai&t=&z=14&ie=UTF8&iwloc=B&output=embed" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+                <!-- Kerala Event -->
+                <div class="event-card kerala" data-aos="zoom-in" data-aos-delay="400">
+                    <span class="event-location-badge">🌴 PALAKKAD, KERALA</span>
+                    <h3 class="event-title">Wedding Ceremony</h3>
+                    <div class="event-details">
+                        <p class="date-time">📅 Friday, 28th November 2025</p>
+                        <p class="date-time">⏰ 09:30 AM – 10:15 AM</p>
+                        <p class="venue">📍 <strong>Velvet Convention Centre</strong></p>
+                        <p class="venue">Puthur, Palakkad, Kerala</p>
+                    </div>
+                    <div class="map-container">
+                        <iframe src="https://maps.google.com/maps?width=100%25&height=300&hl=en&q=Velvet%20Convention%20Centre,%20Puthur,%20Palakkad,%20Kerala&t=&z=14&ie=UTF8&iwloc=B&output=embed" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                    <a href="https://www.google.com/maps/search/Velvet+Convention+Centre+Puthur+Palakkad+Kerala" target="_blank" class="directions-btn">Get Directions 📍</a>
                 </div>
-                <a href="https://www.google.com/maps/search/St+Antony's+Church+Puzhal+Chennai" target="_blank" class="directions-btn">Get Directions 📍</a>
             </div>
 
-            <!-- Reception -->
-            <div class="event-card">
-                <h3 class="event-title">Reception</h3>
+            <!-- Welcome Message -->
+            <div class="event-card" data-aos="fade-up" data-aos-delay="600" style="background: linear-gradient(135deg, rgba(212, 163, 115, 0.1), rgba(255, 255, 255, 0.95)); text-align: center;">
+                <h3 class="event-title" style="border: none;">💝</h3>
                 <div class="event-details">
-                    <p class="date-time">Followed by Reception at 12.00 p.m</p>
-                    <p class="venue">at <strong>Parkavakula Udayar Thirumana Maligai A/C</strong></p>
-                    <p class="venue">Thiruvallur Road, Redhills, Chennai - 52</p>
+                    <p style="font-size: 1.3rem; color: #b8926b; font-style: italic; line-height: 2;">
+                        Looking forward to welcoming you all with love, joy & care at both celebrations.<br>
+                        <span style="font-size: 1.1rem; color: #8a7a73;">Your presence will make our special day even more memorable.</span>
+                    </p>
                 </div>
-                <div class="map-container">
-                    <iframe src="https://maps.google.com/maps?width=100%25&height=300&hl=en&q=Parkavakula%20Udayar%20Thirumana%20Maligai,%20Redhills,%20Chennai&t=&z=14&ie=UTF8&iwloc=B&output=embed" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
-                <a href="https://www.google.com/maps/search/Parkavakula+Udayar+Thirumana+Maligai+Redhills+Chennai" target="_blank" class="directions-btn">Get Directions 📍</a>
             </div>
         </div>
     </section>
@@ -1049,23 +1389,45 @@
 
     <!-- Footer -->
     <footer class="footer">
-        <p class="footer-message">With Love ❤️ Aakash & Anjana</p>
-        <p class="hashtag">#AakashWedsAnjana</p>
+        <p class="footer-message" data-aos="fade-up">With Love ❤️ Aakash & Anjana</p>
+        <p class="hashtag" data-aos="fade-up" data-aos-delay="200">#AakashWedsAnjana #TwoStatesOneLove</p>
+        <div class="social-links" data-aos="fade-up" data-aos-delay="400">
+            <a href="#" class="social-share-btn whatsapp-btn" id="whatsappShare" title="Share on WhatsApp">
+                <span class="share-icon">💬</span>
+                <span>Share on WhatsApp</span>
+            </a>
+            <a href="#" class="social-share-btn instagram-btn" id="instagramShare" title="Share on Instagram">
+                <span class="share-icon">📷</span>
+                <span>Share on Instagram</span>
+            </a>
+        </div>
+        <p class="footer-credit" data-aos="fade-up" data-aos-delay="600">
+            Designed with ❤️ by the couple<br>
+            © 2025 Aakash & Anjana Wedding
+        </p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+
         // Preloader
         window.addEventListener('load', () => {
             setTimeout(() => {
                 document.getElementById('preloader').classList.add('hidden');
                 // Trigger confetti on page load
                 confetti({
-                    particleCount: 100,
-                    spread: 70,
+                    particleCount: 150,
+                    spread: 80,
                     origin: { y: 0.6 },
-                    colors: ['#d4a373', '#b8926b', '#ffc0cb', '#ff69b4']
+                    colors: ['#d4a373', '#b8926b', '#ffc0cb', '#ff69b4', '#ffd700']
                 });
             }, 2000);
         });
@@ -1088,7 +1450,7 @@
             isPlaying = !isPlaying;
         });
 
-        // Countdown Timer
+        // Countdown Timer - First event (Chennai)
         const weddingDate = new Date('November 23, 2025 09:15:00').getTime();
 
         function updateCountdown() {
@@ -1273,6 +1635,61 @@
             
             videoObserver.observe(video);
         }
+
+        // Social Share Functionality
+        const currentUrl = window.location.href;
+        const shareTitle = '💍 Join us in celebrating the wedding of Dr. Aakash & Dr. Anjana';
+        const shareText = `${shareTitle}\n\nTwo States, One Love ❤️\n\nChennai: 23rd Nov 2025\nKerala: 28th Nov 2025\n\n#AakashWedsAnjana #TwoStatesOneLove\n\n`;
+
+        // WhatsApp Share
+        document.getElementById('whatsappShare').addEventListener('click', function(e) {
+            e.preventDefault();
+            const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(shareText + currentUrl)}`;
+            window.open(whatsappUrl, '_blank');
+        });
+
+        // Instagram Share (opens Instagram app or web)
+        document.getElementById('instagramShare').addEventListener('click', function(e) {
+            e.preventDefault();
+            // Instagram doesn't have direct URL sharing, so we copy to clipboard and open Instagram
+            const textToCopy = shareText + currentUrl;
+            
+            // Try to copy to clipboard
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(textToCopy).then(() => {
+                    alert('✅ Link copied to clipboard!\n\nNow opening Instagram where you can paste and share the invitation link.');
+                    // Open Instagram
+                    const instagramUrl = 'instagram://';
+                    const instagramWeb = 'https://www.instagram.com/';
+                    
+                    // Try to open Instagram app first, fallback to web
+                    window.location.href = instagramUrl;
+                    setTimeout(() => {
+                        window.open(instagramWeb, '_blank');
+                    }, 500);
+                }).catch(() => {
+                    // Fallback for older browsers
+                    const textArea = document.createElement('textarea');
+                    textArea.value = textToCopy;
+                    textArea.style.position = 'fixed';
+                    textArea.style.left = '-999999px';
+                    document.body.appendChild(textArea);
+                    textArea.select();
+                    try {
+                        document.execCommand('copy');
+                        alert('✅ Link copied to clipboard!\n\nNow opening Instagram where you can paste and share the invitation link.');
+                        window.open('https://www.instagram.com/', '_blank');
+                    } catch (err) {
+                        alert('Please copy this link manually:\n\n' + textToCopy);
+                    }
+                    document.body.removeChild(textArea);
+                });
+            } else {
+                // Fallback for browsers without clipboard API
+                alert('Please copy this link and share on Instagram:\n\n' + textToCopy);
+                window.open('https://www.instagram.com/', '_blank');
+            }
+        });
     </script>
 </body>
 </html>
