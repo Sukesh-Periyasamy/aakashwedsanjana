@@ -1112,14 +1112,6 @@
         <div class="preloader-text">Loading our love story...</div>
     </div>
 
-    <!-- Music Player -->
-    <div class="music-player" id="musicPlayer">
-        <span class="music-icon">🎵</span>
-    </div>
-    <audio id="bgMusic" loop>
-        <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mpeg">
-    </audio>
-
     <!-- Floating Hearts Background -->
     <div class="heart-container" id="hearts"></div>
 
@@ -1433,24 +1425,6 @@
                     colors: ['#d4a373', '#b8926b', '#ffc0cb', '#ff69b4', '#ffd700']
                 });
             }, 2000);
-        });
-
-        // Music Player
-        const musicPlayer = document.getElementById('musicPlayer');
-        const bgMusic = document.getElementById('bgMusic');
-        let isPlaying = false;
-
-        musicPlayer.addEventListener('click', () => {
-            if (isPlaying) {
-                bgMusic.pause();
-                musicPlayer.classList.remove('playing');
-                musicPlayer.querySelector('.music-icon').textContent = '🎵';
-            } else {
-                bgMusic.play();
-                musicPlayer.classList.add('playing');
-                musicPlayer.querySelector('.music-icon').textContent = '🎶';
-            }
-            isPlaying = !isPlaying;
         });
 
         // Countdown Timer - First event (Chennai)
