@@ -1707,9 +1707,15 @@
             audio.volume = 0.5;
             let isMuted = false;
             muteBtn.onclick = function() {
-                isMuted = !isMuted;
-                audio.muted = isMuted;
-                muteBtn.innerHTML = isMuted ? '🔇' : '🔊';
+                                    isMuted = !isMuted;
+                                    if (isMuted) {
+                                        audio.muted = true;
+                                        audio.volume = 0;
+                                    } else {
+                                        audio.muted = false;
+                                        audio.volume = 0.5;
+                                    }
+                                    muteBtn.innerHTML = isMuted ? '🔇' : '🔊';
             };
             // Ensure music plays on page load (some browsers block autoplay)
             document.addEventListener('click', function() {
